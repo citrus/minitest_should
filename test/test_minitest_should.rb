@@ -8,6 +8,10 @@ class TestMiniTestShould < MiniTest::Unit::TestCase
   def setup
     @something = "nothing"
   end
+  
+  def nothing
+    "blank"
+  end
 
   def test_version
     assert_equal String, MiniTest::Should::VERSION.class
@@ -25,6 +29,10 @@ class TestMiniTestShould < MiniTest::Unit::TestCase
     assert true
   end
   
+  should "create method from string" do
+    assert self.class.test_methods.include?("test_should_create_method_from_string")
+  end
+  
   should "work with multiple assertions" do
     assert_block do 
       1 == 2 / 2
@@ -38,6 +46,10 @@ class TestMiniTestShould < MiniTest::Unit::TestCase
   
   should "work with the tests instance variables" do
     assert_equal "nothing", @something
+  end
+  
+  should "work with the tests instance methods" do
+    assert_equal "blank", nothing
   end
   
   def test_should_warn_on_duplicate_method_names
@@ -55,5 +67,5 @@ class TestMiniTestShould < MiniTest::Unit::TestCase
       end
     end 
   end
-  
+      
 end
