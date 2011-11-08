@@ -32,6 +32,14 @@ class TestMiniTestShould < MiniTest::Unit::TestCase
     assert self.class.test_methods.include?("test_should_create_method_from_string")
   end
   
+  should "allow-crazy! @characters..." do
+    assert self.class.test_methods.include?("test_should_allow_crazy_characters")
+  end
+  
+  should "4 * 4 = 12" do #deadmau5
+    assert self.class.test_methods.include?("test_should_4_4_12")
+  end
+  
   should "work with multiple assertions" do
     assert_block do 
       1 == 2 / 2
