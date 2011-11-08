@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Spencer Steffen"]
   s.email       = ["spencer@citrusme.com"]
   s.homepage    = "https://github.com/citrus/minitest_should"
-  s.summary     = %q{Shoulda style syntax for minitest test::unit.}
-  s.description = %q{Shoulda style syntax for minitest test::unit.}
+  s.summary     = %q{Shoulda style syntax for minitest test::unit. Contexts are not yet supported, but you can use `should "do something"` instead of those `pesky_underscored_test_names`.}
+  s.description = %q{Shoulda style syntax for minitest test::unit. Contexts are not yet supported, but you can use `should "do something"` instead of those `pesky_underscored_test_names`. Please see documentation for more information.}
 
   s.rubyforge_project = "minitest_should"
 
@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency "minitest", "~> 2.7.0"
   s.add_development_dependency "rake",     "> 0"
   s.add_development_dependency "bundler",  "> 0"
   

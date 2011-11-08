@@ -1,5 +1,3 @@
-gem "minitest"
-
 require "minitest/autorun"
 require "minitest/should"
 begin; require "turn"; rescue LoadError; end
