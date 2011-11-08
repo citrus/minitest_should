@@ -1,6 +1,6 @@
 # MiniTest Should [![Build Status](https://secure.travis-ci.org/citrus/minitest_should.png)](http://travis-ci.org/citrus/minitest_should)
 
-minitest_should allows you to write unit tests with [shoulda](https://github.com/thoughtbot/shoulda) style syntax. Shoulda style contexts are not yet supported, but you can use `should "do something"` instead of those `pesky_underscored_test_names`.
+minitest_should allows you to write unit tests with [shoulda](https://github.com/thoughtbot/shoulda) style syntax. Contexts are not yet supported but you can use `should "do something"` instead of those `pesky_underscored_test_names`.
 
 
 Usage
@@ -53,6 +53,14 @@ Testing
 Testing is done with minitest. Run the tests with:
 
     rake
+    
+
+Changelog
+---------
+
+  **2011/11/8 - v0.1.0**
+  - it exists!
+  
     
 
 License
