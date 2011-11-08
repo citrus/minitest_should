@@ -14,7 +14,7 @@ module MiniTest
             raise MiniTest::Should::DuplicateMethodError, "Test named `#{method_name}` already exists in #{self.name}." 
           else
             self.send(:define_method, method_name, block)
-          end          
+          end
         end
             
       end
