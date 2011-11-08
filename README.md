@@ -39,9 +39,9 @@ As usual, just use the `gem install` command:
 
     (sudo) gem install minitest_should
     
-Or add wordy as a gem in your Gemfile:
+Or add minitest_should as a gem in your Gemfile:
 
-    gem 'minitest_should', '~> 0.1.0' 
+    gem 'minitest_should', '~> 0.1.1' 
 
 Then run `bundle install`
 
@@ -57,6 +57,9 @@ Testing is done with minitest. Run the tests with:
 
 Changelog
 ---------
+
+  **2011/11/8 - v0.1.1**
+  - ensure dynamic methods have save names
 
   **2011/11/8 - v0.1.0**
   - it exists!
