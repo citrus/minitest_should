@@ -40,4 +40,12 @@ class TestMiniTestShould < MiniTest::Unit::TestCase
     assert_equal "nothing", @something
   end
   
+  def test_should_warn_on_duplicate_method_names
+    assert_raises MiniTest::Should::DuplicateMethodError do
+      self.class.send(:should, "warn on duplicate method names") do
+        assert true
+      end
+    end  
+  end  
+  
 end
