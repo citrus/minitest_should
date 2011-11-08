@@ -1,0 +1,3 @@
+module MinitestShould
+  VERSION = "0.0.1"
+end
