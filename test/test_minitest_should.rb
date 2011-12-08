@@ -102,5 +102,5 @@ class TestMiniTestShould < MiniTest::Unit::TestCase
     end
       
   end
-      
+  
 end
