@@ -1,6 +1,5 @@
 require "minitest/autorun"
 require "minitest/should"
-begin; require "turn"; rescue LoadError; end
 
 class TestMiniTestShould < MiniTest::Unit::TestCase
 
@@ -73,6 +72,34 @@ class TestMiniTestShould < MiniTest::Unit::TestCase
         assert true
       end
     end 
+  end
+  
+  context "one little alias" do
+    
+    should "make this true" do
+      assert true
+    end
+      
+    context "with a another context" do
+      
+      should "just keep on keepin' on" do
+        assert true
+      end
+        
+    end
+    
+    context "with the same method names as another context" do
+      
+      should "just work" do
+        assert true
+      end
+      
+      should "just keep on keepin' on" do
+        assert true
+      end
+      
+    end
+      
   end
       
 end
