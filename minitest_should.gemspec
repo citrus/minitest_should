@@ -20,5 +20,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "rake",     "> 0"
   s.add_development_dependency "bundler",  "> 0"
+  s.add_development_dependency "minitest", "> 2"
   
 end
