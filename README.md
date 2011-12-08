@@ -59,7 +59,7 @@ Changelog
 ---------
 
   **2011/11/8 - v0.1.1**
-  - ensure dynamic methods have save names
+  - ensure dynamic methods have safe names
 
   **2011/11/8 - v0.1.0**
   - it exists!
