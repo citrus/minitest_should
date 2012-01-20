@@ -1,52 +1,56 @@
 # MiniTest Should [![Build Status](https://secure.travis-ci.org/citrus/minitest_should.png)](http://travis-ci.org/citrus/minitest_should)
 
-minitest_should allows you to write unit tests with [shoulda](https://github.com/thoughtbot/shoulda) style syntax. Contexts are not fully supported but you can use `should "do something"` instead of those `pesky_underscored_test_names`.
+minitest_should allows you to write unit tests with [shoulda](https://github.com/thoughtbot/shoulda) style syntax.
 
 
 Usage
 -----
 
-    gem "minitest"
+When writing your mini-tests, inherit from `MiniTest::Should::TestCase`.
+
+
+```ruby
+gem "minitest"
+
+require "minitest/autorun"
+require "minitest/should"
+
+
+# instead of this
+class TestWithUnderscores < MiniTest::Unit::TestCase
+  
+  def test_should_just_work
+    assert true
+  end
+  
+  def test_something_else_should_be_nothing
+    @something = "nothing"
+    assert_equal "nothing", @something
+  end
+  
+end
+
+# use this!
+class TestWithShould < MiniTest::Should::TestCase
+  
+  should "just work" do
+    assert true
+  end
+  
+  context "Something else" do
     
-    require "minitest/autorun"
-    require "minitest/should"
-    
-    
-    # instead of this
-    class TestWithUnderscores < MiniTest::Unit::TestCase
-      
-      def test_should_just_work
-        assert true
-      end
-      
-      def test_something_else_should_be_nothing
-        @something = "nothing"
-        assert_equal "nothing", @something
-      end
-      
+    setup do
+      @something = "nothing"
     end
     
-    # use this!
-    class TestWithShould < MiniTest::Should::TestCase
-      
-      should "just work" do
-        assert true
-      end
-      
-      context "Something else" do
-        
-        setup do
-          @something = "nothing"
-        end
-        
-        should "be nothing" do
-          assert_equal "nothing", @something
-        end
-        
-      end
-      
+    should "be nothing" do
+      assert_equal "nothing", @something
     end
     
+  end
+  
+end
+```
 
  
 Installation
@@ -54,11 +58,15 @@ Installation
 
 As usual, just use the `gem install` command:
 
-    (sudo) gem install minitest_should
+```bash
+(sudo) gem install minitest_should
+```
     
 Or add minitest_should as a gem in your Gemfile:
 
-    gem 'minitest_should', '~> 0.3.0' 
+```bash
+gem 'minitest_should', '~> 0.3.0' 
+```
 
 Then run `bundle install`
 
@@ -69,7 +77,9 @@ Testing
 
 Testing is done with minitest. (duh!) Run the tests with:
 
-    rake
+```bash
+rake
+```
     
 
 Changelog
