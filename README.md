@@ -2,9 +2,9 @@
 
 minitest_should allows you to write unit tests with [shoulda](https://github.com/thoughtbot/shoulda) style syntax.
 
-
+------------------------------------------------------------------------------
 Usage
------
+------------------------------------------------------------------------------
 
 When writing your mini-tests, inherit from `MiniTest::Should::TestCase`.
 
@@ -52,9 +52,9 @@ class TestWithShould < MiniTest::Should::TestCase
 end
 ```
 
- 
+------------------------------------------------------------------------------
 Installation
-------------
+------------------------------------------------------------------------------
 
 As usual, just use the `gem install` command:
 
@@ -71,9 +71,9 @@ gem 'minitest_should', '~> 0.3.0'
 Then run `bundle install`
 
 
-
+------------------------------------------------------------------------------
 Testing
--------
+------------------------------------------------------------------------------
 
 Testing is done with minitest. (duh!) Run the tests with:
 
@@ -82,8 +82,9 @@ rake
 ```
     
 
+------------------------------------------------------------------------------
 Changelog
----------
+------------------------------------------------------------------------------
 
 **2012/1/20 - v0.3.0**
 
@@ -107,8 +108,8 @@ Changelog
 - it exists!
   
     
-
+------------------------------------------------------------------------------
 License
--------
+------------------------------------------------------------------------------
 
 Copyright (c) 2011 - 2012 Spencer Steffen & Citrus, released under the New BSD License All rights reserved.
