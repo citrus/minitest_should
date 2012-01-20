@@ -1,13 +1,9 @@
 require "minitest/unit"
-require "minitest/should/base"
 require "minitest/should/version"
 
-alias :context :describe
-
 module MiniTest
-  module Should
-  
-    class DuplicateMethodError < StandardError; end
-    
+  module Should  
+    class DuplicateMethodError < StandardError; end    
+    autoload :TestCase, "minitest/should/test_case"
   end
 end

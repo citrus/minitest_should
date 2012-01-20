@@ -27,7 +27,7 @@ Usage
     end
     
     # use this!
-    class TestWithShould < MiniTest::Unit::TestCase
+    class TestWithShould < MiniTest::Should::TestCase
       
       should "just work" do
         assert true
@@ -35,7 +35,7 @@ Usage
       
       context "Something else" do
         
-        def setup
+        setup do
           @something = "nothing"
         end
         
@@ -58,7 +58,7 @@ As usual, just use the `gem install` command:
     
 Or add minitest_should as a gem in your Gemfile:
 
-    gem 'minitest_should', '~> 0.2.0' 
+    gem 'minitest_should', '~> 0.3.0' 
 
 Then run `bundle install`
 
@@ -75,6 +75,11 @@ Testing is done with minitest. (duh!) Run the tests with:
 Changelog
 ---------
 
+  **2012/1/20 - v0.3.0**
+  - don't pollute minitest/unit/testcase
+  - subclass minitest/spec as minitest/should/test_case
+  - alias before and after as setup and teardown
+  
   **2011/12/8 - v0.2.0**
   - add contexts
 
@@ -89,4 +94,4 @@ Changelog
 License
 -------
 
-Copyright (c) 2011 Spencer Steffen & Citrus, released under the New BSD License All rights reserved.
+Copyright (c) 2011 - 2012 Spencer Steffen & Citrus, released under the New BSD License All rights reserved.

@@ -2,7 +2,7 @@ gem "minitest"
 require "minitest/autorun"
 require "minitest/should"
 
-class TestMiniTestShould < MiniTest::Unit::TestCase
+class TestMiniTestShould < MiniTest::Should::TestCase
 
   def setup
     @something = "nothing"
@@ -16,8 +16,8 @@ class TestMiniTestShould < MiniTest::Unit::TestCase
     assert_equal String, MiniTest::Should::VERSION.class
   end
   
-  def test_includes_minitest_should_base_module
-    assert self.class.included_modules.include?(MiniTest::Should::Base)
+  def test_case_extends_minitest_unit_test_case
+    assert self.class.ancestors.include?(MiniTest::Unit::TestCase)
   end
   
   def test_respond_to_should
@@ -80,13 +80,33 @@ class TestMiniTestShould < MiniTest::Unit::TestCase
     should "make this true" do
       assert true
     end
+    
+    should "work with the parent tests instance variables" do
+      assert_equal "nothing", @something
+    end
+    
+    should "work with the parent tests instance methods" do
+      assert_equal "blank", nothing
+    end    
       
     context "with a another context" do
+            
+      setup do
+        @something = "not-nothing"
+      end
       
+      teardown do
+        assert "not-nothing", @something
+      end
+            
       should "just keep on keepin' on" do
         assert true
       end
-        
+      
+      should "manipulate the parent tests instance variables in setup" do
+        assert_equal "not-nothing", @something
+      end
+      
     end
     
     context "with the same method names as another context" do
