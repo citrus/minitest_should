@@ -85,19 +85,26 @@ rake
 Changelog
 ---------
 
-  **2012/1/20 - v0.3.0**
-  - don't pollute minitest/unit/testcase
-  - subclass minitest/spec as minitest/should/test_case
-  - alias before and after as setup and teardown
-  
-  **2011/12/8 - v0.2.0**
-  - add contexts
+**2012/1/20 - v0.3.0**
 
-  **2011/11/8 - v0.1.1**
-  - ensure dynamic methods have safe names
+- don't pollute minitest/unit/testcase
+- subclass minitest/spec as minitest/should/test_case
+- alias before and after as setup and teardown
 
-  **2011/11/8 - v0.1.0**
-  - it exists!
+
+**2011/12/8 - v0.2.0**
+
+- add contexts
+
+
+**2011/11/8 - v0.1.1**
+
+- ensure dynamic methods have safe names
+
+
+**2011/11/8 - v0.1.0**
+
+- it exists!
   
     
 
