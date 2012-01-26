@@ -1,6 +1,6 @@
 # MiniTest Should [![Build Status](https://secure.travis-ci.org/citrus/minitest_should.png)](http://travis-ci.org/citrus/minitest_should)
 
-minitest_should allows you to write unit tests with [shoulda](https://github.com/thoughtbot/shoulda) style syntax.
+minitest_should allows you to write unit tests with [shoulda](https://github.com/thoughtbot/shoulda) style context syntax for minitest.
 
 ------------------------------------------------------------------------------
 Usage
@@ -65,10 +65,25 @@ As usual, just use the `gem install` command:
 Or add minitest_should as a gem in your Gemfile:
 
 ```bash
-gem 'minitest_should', '~> 0.3.0' 
+gem 'minitest_should', '~> 0.3.1' 
 ```
 
-Then run `bundle install`
+Run `bundle install` then require minitest_should like so:
+
+```ruby
+require "minitest/autorun"
+require "minitest/should"
+```
+
+Make sure your test classes inherit from `MiniTest::Should::TestCase`
+
+```ruby
+class MyTest < MiniTest::Should::TestCase
+
+  # ...
+
+end
+```
 
 
 ------------------------------------------------------------------------------
@@ -85,6 +100,11 @@ rake
 ------------------------------------------------------------------------------
 Changelog
 ------------------------------------------------------------------------------
+
+**2012/1/26 - v0.3.1**
+
+- always alias setup to before, even if rails is present
+
 
 **2012/1/20 - v0.3.0**
 
