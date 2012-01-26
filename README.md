@@ -1,4 +1,5 @@
-# MiniTest Should [![Build Status](https://secure.travis-ci.org/citrus/minitest_should.png)](http://travis-ci.org/citrus/minitest_should)
+# MiniTest Should [![Build Status](https://secure.travis-ci.org/citrus/minitest_should.png)](http://travis-ci.org/citrus/minitest_should) [![Dependency Status](https://gemnasium.com/citrus/minitest_should.png)](https://gemnasium.com/citrus/minitest_should)
+
 
 minitest_should allows you to write unit tests with [shoulda](https://github.com/thoughtbot/shoulda) style context syntax for minitest.
 
