@@ -1,4 +1,8 @@
 gem "minitest"
+
+begin; require "simplecov"; SimpleCov.start; rescue LoadError; end
+begin; require "turn"; rescue LoadError; end
+
 require "minitest/autorun"
 require "minitest/should"
 
