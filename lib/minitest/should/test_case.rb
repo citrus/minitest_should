@@ -3,8 +3,8 @@
 class MiniTest::Should::TestCase < MiniTest::Spec
   
   class << self
-    alias :setup :before unless defined?(Rails)
-    alias :teardown :after unless defined?(Rails)
+    alias :setup :before
+    alias :teardown :after
     alias :context :describe
   end
   
