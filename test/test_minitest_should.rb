@@ -6,7 +6,7 @@ begin; require "turn"; rescue LoadError; end
 require "minitest/autorun"
 require "minitest/should"
 
-class TestMiniTestShould < MiniTest::Should::TestCase
+class TestMinitestShould < Minitest::Should::TestCase
 
   def setup
     @something = "nothing"
@@ -17,11 +17,15 @@ class TestMiniTestShould < MiniTest::Should::TestCase
   end
 
   def test_version
-    assert_equal String, MiniTest::Should::VERSION.class
+    assert_equal String, Minitest::Should::VERSION.class
   end
   
-  def test_case_extends_minitest_unit_test_case
-    assert self.class.ancestors.include?(MiniTest::Unit::TestCase)
+  def test_case_extends_minitest_test
+    assert self.class.ancestors.include?(Minitest::Test)
+  end
+
+  def test_case_extends_minitest_spec
+    assert self.class.ancestors.include?(Minitest::Spec)
   end
   
   def test_respond_to_should
@@ -33,23 +37,21 @@ class TestMiniTestShould < MiniTest::Should::TestCase
   end
   
   should "create method from string" do
-    assert self.class.test_methods.include?("test_should_create_method_from_string")
+    assert self.respond_to?("test_should_create_method_from_string")
   end
   
   should "allow-crazy! @characters..." do
-    assert self.class.test_methods.include?("test_should_allow_crazy_characters")
+    assert self.respond_to?("test_should_allow_crazy_characters")
   end
   
   should "4 * 4 = 12" do #deadmau5
-    assert self.class.test_methods.include?("test_should_4_4_12")
+    assert self.respond_to?("test_should_4_4_12")
   end
   
   should "work with multiple assertions" do
-    assert_block do 
-      1 == 2 / 2
-    end
-    assert_raises NameError do
-      zomg
+    assert 1 == 2 / 2
+    assert_raises NoMethodError do
+      send :zomg
     end
     assert_instance_of String, "woo hoo"
     assert_equal 2, 1 + 1    
@@ -64,7 +66,7 @@ class TestMiniTestShould < MiniTest::Should::TestCase
   end
   
   def test_should_warn_on_duplicate_method_names
-    assert_raises MiniTest::Should::DuplicateMethodError do
+    assert_raises Minitest::Should::DuplicateMethodError do
       self.class.send(:should, "warn on duplicate method names") do
         assert true
       end
@@ -72,7 +74,7 @@ class TestMiniTestShould < MiniTest::Should::TestCase
   end  
   
   should "also warn on duplicate method names" do
-    assert_raises MiniTest::Should::DuplicateMethodError do 
+    assert_raises Minitest::Should::DuplicateMethodError do 
       self.class.send(:should, "also warn on duplicate method names") do
         assert true
       end

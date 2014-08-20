@@ -1,4 +1,4 @@
-# MiniTest Should [![Build Status](https://secure.travis-ci.org/citrus/minitest_should.png)](http://travis-ci.org/citrus/minitest_should) [![Dependency Status](https://gemnasium.com/citrus/minitest_should.png)](https://gemnasium.com/citrus/minitest_should)
+# Minitest Should [![Build Status](https://secure.travis-ci.org/citrus/minitest_should.png)](http://travis-ci.org/citrus/minitest_should) [![Dependency Status](https://gemnasium.com/citrus/minitest_should.png)](https://gemnasium.com/citrus/minitest_should)
 
 
 minitest_should allows you to write unit tests with [shoulda](https://github.com/thoughtbot/shoulda) style context syntax for minitest.
@@ -7,7 +7,7 @@ minitest_should allows you to write unit tests with [shoulda](https://github.com
 Usage
 ------------------------------------------------------------------------------
 
-When writing your mini-tests, inherit from `MiniTest::Should::TestCase`.
+When writing your mini-tests, inherit from `Minitest::Should::TestCase`.
 
 
 ```ruby
@@ -18,7 +18,7 @@ require "minitest/should"
 
 
 # instead of this
-class TestWithUnderscores < MiniTest::Unit::TestCase
+class TestWithUnderscores < Minitest::Unit::TestCase
   
   def test_should_just_work
     assert true
@@ -32,7 +32,7 @@ class TestWithUnderscores < MiniTest::Unit::TestCase
 end
 
 # use this!
-class TestWithShould < MiniTest::Should::TestCase
+class TestWithShould < Minitest::Should::TestCase
   
   should "just work" do
     assert true
@@ -66,7 +66,7 @@ As usual, just use the `gem install` command:
 Or add minitest_should as a gem in your Gemfile:
 
 ```bash
-gem 'minitest_should', '~> 0.3.1' 
+gem 'minitest_should' 
 ```
 
 Run `bundle install` then require minitest_should like so:
@@ -76,10 +76,10 @@ require "minitest/autorun"
 require "minitest/should"
 ```
 
-Make sure your test classes inherit from `MiniTest::Should::TestCase`
+Make sure your test classes inherit from `Minitest::Should::TestCase`
 
 ```ruby
-class MyTest < MiniTest::Should::TestCase
+class MyTest < Minitest::Should::TestCase
 
   # ...
 
@@ -101,6 +101,10 @@ rake
 ------------------------------------------------------------------------------
 Changelog
 ------------------------------------------------------------------------------
+
+**2014/8/19 - v0.3.2
+
+- refactor to Minitest v5.4 for Rails 4.1
 
 **2012/1/26 - v0.3.1**
 

@@ -4,7 +4,7 @@ require "minitest/should/version"
 
 Gem::Specification.new do |s|
   s.name        = "minitest_should"
-  s.version     = MiniTest::Should::VERSION
+  s.version     = Minitest::Should::VERSION
   s.authors     = ["Spencer Steffen"]
   s.email       = ["spencer@citrusme.com"]
   s.homepage    = "https://github.com/citrus/minitest_should"
@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "rake",     "> 0"
   s.add_development_dependency "bundler",  "> 0"
-  s.add_development_dependency "minitest", "> 2"
+  s.add_development_dependency "minitest", "> 5"
   
 end

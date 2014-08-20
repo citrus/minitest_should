@@ -1,7 +1,7 @@
 require "minitest/unit"
 require "minitest/should/version"
 
-module MiniTest
+module Minitest
   module Should  
     class DuplicateMethodError < StandardError; end    
     autoload :TestCase, "minitest/should/test_case"
